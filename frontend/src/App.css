@@ -1,0 +1,178 @@
+/* ===== BASE LAYOUT ===== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background: #ffffff;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  align-items: stretch;
+  background: linear-gradient(to right, #e5ffe9 0%, #d9fff0 400px, transparent 401px);
+}
+
+/* LEFT SIDE — CARD */
+.card {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  margin-left: 40px;
+  align-self: flex-start;
+  animation: fadeIn 1s ease-out;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.countdown {
+  margin: 20px 0;
+  font-size: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+}
+
+button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #ff6b81;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff4757;
+}
+
+/* ===== RIGHT SIDE — ANIMATION AREA ===== */
+
+.effects-area {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  overflow: hidden;
+}
+
+/* ===== CONFETTI PRO ===== */
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.confetti::before,
+.confetti::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, #ff4757 3px, transparent 4px),
+    radial-gradient(circle, #ffa502 3px, transparent 4px),
+    radial-gradient(circle, #2ed573 3px, transparent 4px),
+    radial-gradient(circle, #1e90ff 3px, transparent 4px),
+    radial-gradient(circle, #e056fd 3px, transparent 4px);
+  background-size: 20px 20px;
+  animation: confettiFall 10s linear infinite;
+  opacity: 0.6;
+}
+
+.confetti::after {
+  animation-duration: 13s;
+  opacity: 0.4;
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-200px) rotate(0deg); }
+  100% { transform: translateY(800px) rotate(360deg); }
+}
+
+/* ===== BALLOONS PRO ===== */
+
+.balloon {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  border-radius: 50% 50% 45% 45%;
+  box-shadow: inset -5px -10px 15px rgba(0,0,0,0.25);
+  animation: balloonFloat 8s ease-in-out infinite;
+  z-index: 10;
+}
+
+.balloon1 {
+  left: 20%;
+  bottom: -120px;
+  background: radial-gradient(circle at 30% 30%, #ff6b81, #ff4757);
+  animation-delay: 0s;
+}
+
+.balloon2 {
+  left: 40%;
+  bottom: -120px;
+  background: radial-gradient(circle at 30% 30%, #1e90ff, #3742fa);
+  animation-delay: 2s;
+}
+
+.balloon3 {
+  left: 60%;
+  bottom: -120px;
+  background: radial-gradient(circle at 30% 30%, #2ed573, #1abc9c);
+  animation-delay: 4s;
+}
+
+@keyframes balloonFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-260px) rotate(6deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* ===== FIREWORKS PRO ===== */
+
+.fireworks {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle,
+    rgba(255,255,255,1) 10%,
+    rgba(255,0,0,0.7) 40%,
+    rgba(255,165,0,0.4) 70%,
+    rgba(255,0,0,0) 85%
+  );
+  animation: fireBoom 2s ease-out infinite;
+  z-index: 12;
+}
+
+@keyframes fireBoom {
+  0% { transform: scale(0.2); opacity: 0.3; }
+  40% { transform: scale(1.3); opacity: 1; }
+  70% { transform: scale(1.6); opacity: 0.7; }
+  100% { transform: scale(0.2); opacity: 0; }
+}
