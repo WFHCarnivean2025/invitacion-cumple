@@ -49,6 +49,7 @@ export default function App() {
         <p>
           Te invito este <strong>domingo 7 de diciembre</strong> a las{" "}
           <strong>3:00 PM</strong>.
+          Lugar: <strong><a href="https://maps.app.goo.gl/rHsZr4kzCNtyfaS78">Salón de Fiestas</a></strong>.
         </p>
 
         {timeLeft ? (
