@@ -33,6 +33,7 @@ body {
   -webkit-font-smoothing: antialiased;
   backface-visibility: hidden;
   transform: translateZ(0);
+  opacity: 1 !important;
 }
 
 /* ===== ANIMATIONS ===== */
